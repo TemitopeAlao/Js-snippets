@@ -1,96 +1,105 @@
-//Use all the  string methods in the group with at least two examples each
 const word = "Channels";
 const anotherWord = "monument";
 
-//charAt() method
-console.log(word.charAt(5));
-console.log(anotherWord.charAt(3));
+/*
+==========================
+String Methods in JavaScript
+==========================
+*/
 
-//concat() method
-console.log(word.concat("", " is my name"));
-console.log(anotherWord.concat("", "al"));
+// charAt(index) - Returns the character at a specified index
+console.log(word.charAt(5)); // 'e'
+console.log(anotherWord.charAt(3)); // 'u'
 
-//startsWith() method
-console.log(word.startsWith("f"));
-console.log(anotherWord.startsWith("m"));
+// concat(str1, str2, ...) - Joins two or more strings
+console.log(word.concat(" is my name")); // 'Channels is my name'
+console.log(anotherWord.concat("al")); // 'monumental'
 
-//endsWith() method
-console.log(word.endsWith("s"));
-console.log(anotherWord.endsWith("n"));
+// startsWith(substring) - Checks if string starts with given substring
+console.log(word.startsWith("f")); // false
+console.log(anotherWord.startsWith("m")); // true
 
-//includes() method
-console.log(word.includes("n"));
-console.log(anotherWord.includes("r"));
+// endsWith(substring) - Checks if string ends with given substring
+console.log(word.endsWith("s")); // true
+console.log(anotherWord.endsWith("n")); // false
 
-//indexOf() method
-console.log(word.indexOf("e"));
-console.log(anotherWord.includes("t"));
+// includes(substring) - Checks if string contains a given substring
+console.log(word.includes("n")); // true
+console.log(anotherWord.includes("r")); // false
 
-//lastIndexOf() method
-console.log(word.lastIndexOf("n"));
-console.log(anotherWord.lastIndexOf("m"));
+// indexOf(value) - Returns the index of the first occurrence
+console.log(word.indexOf("e")); // 5
+console.log(anotherWord.indexOf("t")); // 6
 
-// match() method
-console.log(word.match(/nells/));
-console.log(anotherWord.match(/men/));
+// lastIndexOf(value) - Returns the last occurrence index of a value
+console.log(word.lastIndexOf("n")); // 2
+console.log(anotherWord.lastIndexOf("m")); // 5
 
-// padStart() method
-console.log(word.padStart(14, "#"));
-console.log(anotherWord.padStart(20, "&"));
+// match(regex) - Returns matched result using RegEx
+console.log(word.match(/nells/)); // null
+console.log(anotherWord.match(/men/)); // ['men']
 
-// padEnd() method
-console.log(word.padEnd(18, "*"));
-console.log(anotherWord.padEnd(15, "+"));
+// padStart(targetLength, padStr) - Pads the beginning of the string
+console.log(word.padStart(14, "#")); // '######Channels'
+console.log(anotherWord.padStart(20, "&")); // '&&&&&&&&&&&monument'
 
-// repeat() method
-console.log(word.repeat(5));
-console.log(anotherWord.repeat(2));
+// padEnd(targetLength, padStr) - Pads the end of the string
+console.log(word.padEnd(18, "*")); // 'Channels**********'
+console.log(anotherWord.padEnd(15, "+")); // 'monument+++++++'
 
-// replace() method
-console.log(word.replace("nnels", "yil"));
-console.log(anotherWord.replace("ument", "key"));
+// repeat(count) - Returns a new string repeated count times
+console.log(word.repeat(5)); // 'ChannelsChannelsChannelsChannelsChannels'
+console.log(anotherWord.repeat(2)); // 'monumentmonument'
 
-//search() method
-console.log(word.search("n"));
-console.log(anotherWord.search("o"));
+// replace(oldValue, newValue) - Replaces part of string
+console.log(word.replace("nnels", "yil")); // 'Chayil'
+console.log(anotherWord.replace("ument", "key")); // 'monkey'
 
-//slice() method
-console.log(word.slice(-1));
-console.log(anotherWord.slice(0, 4));
+// search(substring or regex) - Returns index of match
+console.log(word.search("n")); // 2
+console.log(anotherWord.search("o")); // 1
 
-//split() method
-console.log("Channels is my name".split(" "));
-console.log(anotherWord.split(""));
+// slice(start, end) - Extracts part of string (end not included)
+console.log(word.slice(-1)); // 's'
+console.log(anotherWord.slice(0, 4)); // 'monu'
 
-//substring() method
-console.log(word.substring(3, 6));
-console.log(anotherWord.substring(2, 7));
+// split(separator) - Splits string into array
+console.log("Channels is my name".split(" ")); // ['Channels', 'is', 'my', 'name']
+console.log(anotherWord.split("")); // ['m','o','n','u','m','e','n','t']
 
-//toLowerCase() method
-console.log("Hello, THERE".toLowerCase());
-console.log("Experience is the BEST TeacheR".toLowerCase());
+// substring(start, end) - Similar to slice but doesn't accept negatives
+console.log(word.substring(3, 6)); // 'nne'
+console.log(anotherWord.substring(2, 7)); // 'numen'
 
-//toUpperCase() method
-console.log("another beautiful morning".toUpperCase());
-console.log("i enJoy coDing".toUpperCase());
+// toLowerCase() - Converts string to lowercase
+console.log("Hello, THERE".toLowerCase()); // 'hello, there'
+console.log("Experience is the BEST TeacheR".toLowerCase()); // 'experience is the best teacher'
 
-//trim() method
-console.log("  I played football yesterday  ".trim());
-console.log(" greet ".trim());
+// toUpperCase() - Converts string to uppercase
+console.log("another beautiful morning".toUpperCase()); // 'ANOTHER BEAUTIFUL MORNING'
+console.log("i enJoy coDing".toUpperCase()); // 'I ENJOY CODING'
 
-//trimStart() method
-console.log("  Thank you  ".trimStart());
-console.log("  Hello ".trimStart());
+// trim() - Removes whitespace from both ends
+console.log("  I played football yesterday  ".trim()); // 'I played football yesterday'
+console.log(" greet ".trim()); // 'greet'
 
-//trimEnd() method
-console.log("channels  ".trimEnd());
-console.log("  The end  ".trimEnd());
+// trimStart() - Removes whitespace from the start
+console.log("  Thank you  ".trimStart()); // 'Thank you  '
+console.log("  Hello ".trimStart()); // 'Hello '
+
+// trimEnd() - Removes whitespace from the end
+console.log("channels  ".trimEnd()); // 'channels'
+console.log("  The end  ".trimEnd()); // '  The end'
+
+/*
+Trim a name, slice it, add a new letter, and convert to uppercase
+*/
 
 const myName = " channels";
 
-let trimmed = myName.trimStart(); // only declare once
-let sliced = trimmed.slice(1, 5);
-let addNewLetter = sliced.concat("", "a");
-let result = addNewLetter.toUpperCase();
+let trimmed = myName.trimStart(); // 'channels'
+let sliced = trimmed.slice(1, 5); // 'hann'
+let addNewLetter = sliced.concat("a"); // 'hanna'
+let result = addNewLetter.toUpperCase(); // 'HANNA'
 
-console.log(result); // "HANNA"
+console.log(result); // 'HANNA'
