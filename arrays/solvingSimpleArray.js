@@ -71,3 +71,87 @@ function reverseArray(arr) {
 }
 
 console.log(reverseArray([2, 4, 6, 8]));
+
+//Write a function that takes an array of objects with department and employees properties, and returns the department with the highest average salary.
+function departmentArr(input) {
+  let highestAvg = 0;
+  let topDept = "";
+  input.forEach((dept) => {
+    const salaries = dept.employees.map((emp) => emp.salary);
+    console.log(salaries);
+    const total = salaries.reduce((acc, cur) => acc + cur, 0);
+    const avgSalary = total / salaries.length;
+    if (avgSalary > highestAvg) {
+      highestAvg = avgSalary;
+      topDept = dept.department;
+    }
+  });
+  return topDept;
+}
+departmentArr([
+  { department: "HR", employees: [{ salary: 3000 }, { salary: 3500 }] },
+  { department: "IT", employees: [{ salary: 5000 }, { salary: 7000 }] },
+]);
+
+// Create a function that receives an array of objects representing cars and their prices  and returns a new array with the brands and whether they are affordable.
+function carsPrice(input) {
+  return input.map((car) => {
+    return {
+      brand: car.brand,
+      affordable: car.price < 30000,
+    };
+  });
+}
+
+carsPrice([
+  { brand: "Toyota", price: 25000 },
+  { brand: "Honda", price: 5000 },
+  { brand: "Tesla", price: 200000 },
+]);
+
+//Implement a function that takes an array of objects containing movies and their ratings (e.g., '(title: "Inception", rating: 8.5}*) and returns a new array with movie titles and whether they are highly rated (rating >= 8
+function movieRating(input) {
+  const result = input.map((movie) => {
+    return { title: movie.title, highlyRated: movie.rating >= 8 };
+  });
+  return result;
+}
+movieRating([
+  { title: "Inception", rating: 8.5 },
+  { title: "Sammie", rating: 10 },
+  { title: "Frozen", rating: 4.5 },
+  { title: "Perfect ", rating: 8 },
+  { title: "The plan", rating: 6 },
+]);
+
+//Write a function that takes an array of objects representing countries and their GDPs (e.g., (name: "USA", gdp: 21000000000000}*) and returns a new array with country names and whether they are economically strong (GDP > 1 trillion).
+function countryGDP(input) {
+  return input.map((country) => {
+    return {
+      name: country.name,
+      economic: country.gdp > 10000000000,
+    };
+  });
+}
+countryGDP([
+  { name: "USA", gdp: 21000000000000 },
+  { name: "Nig", gdp: 10000000000 },
+  { name: "Canada", gdp: 310000000000000 },
+]);
+
+//Create a function that receives an array of objects representing cities and their average temperatures (e.g., '(name: "Tokyo", temperature: 25}*) and returns a new array with city names and whether they have a warm climate (temperature > 20).
+function CityTemp(input) {
+  return input.map((city) => {
+    return {
+      name: city.name,
+      warmClimate: city.temperature > 20,
+    };
+  });
+}
+CityTemp([
+  { name: "Tokyo", temperature: 25 },
+  { name: "Egypt", temperature: -20 },
+  { name: "France", temperature: 15 },
+  { name: "Netherlands", temperature: 28 },
+  { name: "Nigeria", temperature: 16 },
+]);
