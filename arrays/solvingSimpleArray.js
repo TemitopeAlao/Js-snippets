@@ -155,3 +155,58 @@ CityTemp([
   { name: "Netherlands", temperature: 28 },
   { name: "Nigeria", temperature: 16 },
 ]);
+
+//Write a function that takes an array of numbers and returns the two largest distinct numbers as an array.
+const distinctNumbers = function (input) {
+  const setNumbers = [...new Set(input)]
+    .sort((a, b) => {
+      return b - a;
+    })
+    .slice(0, 2);
+
+  return setNumbers;
+};
+distinctNumbers([3, 1, 4, 4, 2, 5]);
+
+//Write a function that takes an array of strings and returns an object where each string is a key, and its length is the value.
+
+function valueLength(str) {
+  const result = {};
+  str.forEach(
+    (word) =>
+      //Key created using bracket notation--------Value
+      (result[word] = word.length)
+  );
+  return result;
+}
+valueLength(["apple", "banana", "kiwi"]);
+
+//Write a function that takes a nested array and returns a flat array
+function number(input) {
+  return input.flat(Infinity);
+}
+number([[1, 2], [3, 4], [5]]);
+
+//Write a function that takes an array of numbers and groups them by even or odd into an object { even: [I, odd: [] }.
+function groupOddEven(input) {
+  const grouped = Object.groupBy(input, (num) =>
+    num % 2 === 0 ? "even" : "odd"
+  );
+  return grouped;
+}
+groupOddEven([3, 8, 15, 2, 10]);
+
+//----OR-----
+function groupOddEven(input) {
+  const grouped = { even: [], odd: [] };
+
+  input.forEach((num) => {
+    if (num % 2 === 0) {
+      grouped.even.push(num);
+    } else {
+      grouped.odd.push(num);
+    }
+  });
+
+  return grouped;
+}
